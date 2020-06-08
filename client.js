@@ -14,17 +14,16 @@ module.exports = function (options) {
     const loginURI = '/api/user/login_by_token';
     const { AUTH_SERVER } = options;
     let ret = qualifyURL(loginURI, true);
-    let redirectURL = AUTH_SERVER  + '?ret=' + ret;
+    let redirectURL = AUTH_SERVER  + '?service=' + ret;
     location.href = redirectURL;
   }
 
   const QssoComponent = () => (
-    <button onClick={handleLogin} className="btn-home btn-home-normal" >QSSO 登录</button>
+    <button onClick={handleLogin} className="btn-home btn-home-normal" >OA 登录</button>
   )
 
   this.bindHook('third_login', QssoComponent);
 };
-
 
 
 
